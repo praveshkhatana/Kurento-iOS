@@ -220,6 +220,18 @@ static NSTimeInterval kRoomClientTimeoutInterval = 5;
     [self joinRoomWithDataChannels:NO];
 }
 
+- (void)joinRoomWithParams:(NSDictionary <NSString *, NSString *>*)params block:(void (^)(NSError *error))block {
+    [self nbm_joinRoomWithParams:params completion:^(NSSet *peers, NSError *error) {
+        if ([self.delegate respondsToSelector:@selector(client:didJoinRoom:)]) {
+            [self.delegate client:self didJoinRoom:error];
+        }
+
+        if (block) {
+            block(error);
+        }
+    }];
+}
+
 #pragma mark Leave room
 
 - (void)leaveRoom {
@@ -365,6 +377,22 @@ static NSTimeInterval kRoomClientTimeoutInterval = 5;
                                    }];
 }
 
+- (void)nbm_joinRoomWithParams:(NSDictionary <NSString *, NSString *>*)params completion:(JoinRoomBlock)block {
+    [self.jsonRpcClient sendRequestWithMethod:kJoinRoomMethod
+                                   parameters: params
+                                   completion:^(NBMResponse *response) {
+                                       NSError *error;
+                                       NSSet *peers = [self peersFromResponse:response error:&error];
+                                       
+                                        if (!error) {
+                                            self.joined = YES;
+                                        }
+                                       
+                                       if (block) {
+                                           block (peers, error);
+                                       }
+                                   }];
+}
 
 - (NSSet *)peersFromResponse:(NBMResponse *)response error:(NSError **)error {
     NSMutableDictionary *peers;

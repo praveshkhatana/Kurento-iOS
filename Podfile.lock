@@ -8,7 +8,6 @@ PODS:
   - CocoaLumberjack/Extensions (2.4.0):
     - CocoaLumberjack/Default
   - DGActivityIndicatorView (2.1.1)
-  - GoogleWebRTC (1.1.24489)
   - KurentoToolbox (0.6.0):
     - KurentoToolbox/Default (= 0.6.0)
   - KurentoToolbox/Default (0.6.0):
@@ -37,28 +36,29 @@ PODS:
   - Reachability (3.2)
   - SBJson (4.0.5)
   - SocketRocket (0.5.1)
+  - WebRTC (63.11.20455)
 
 DEPENDENCIES:
   - CocoaLumberjack (= 2.4.0)
   - DGActivityIndicatorView
-  - GoogleWebRTC
   - KurentoToolbox (from `.`)
   - Masonry (~> 0.6.4)
   - MBProgressHUD (~> 0.9.2)
   - Reachability (~> 3.2)
   - SBJson (~> 4.0.2)
   - SocketRocket (~> 0.5.1)
+  - WebRTC
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CocoaLumberjack
     - DGActivityIndicatorView
-    - GoogleWebRTC
     - Masonry
     - MBProgressHUD
     - Reachability
     - SBJson
     - SocketRocket
+    - WebRTC
 
 EXTERNAL SOURCES:
   KurentoToolbox:
@@ -67,14 +67,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
-  GoogleWebRTC: 492a912a31aa1f66466c151a1bdcd98211f882df
   KurentoToolbox: 8327041ef7c6d7dcbebb49c5a76ee74597728410
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SBJson: af3137ccda22be3004487524da0a071c75d4251b
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  WebRTC: f2a6203584745fe53532633397557876b5d71640
 
-PODFILE CHECKSUM: ac49755be26881a2169a79ad700d21b2ecdf3a68
+PODFILE CHECKSUM: bcc49c78a91413fcbf9ce837665ccea755c666ec
 
 COCOAPODS: 1.5.3

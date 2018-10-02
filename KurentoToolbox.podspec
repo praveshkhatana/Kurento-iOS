@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
     ss.dependency 'KurentoToolbox/JSON-RPC'
     ss.dependency 'KurentoToolbox/Room'
     ss.dependency 'KurentoToolbox/Tree'
+    ss.ios.vendored_frameworks = 'WebRTC.framework'
   end
 
   s.subspec 'WebRTC' do |ss|
@@ -36,6 +37,7 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'Classes/JSON-RPC/*.h'
     ss.dependency 'SocketRocket', '~> 0.5.1'
     ss.dependency 'SBJson', '~> 4.0.2'
+   
     ss.dependency 'KurentoToolbox/Utils'
   end
   

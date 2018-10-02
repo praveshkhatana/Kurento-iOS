@@ -67,7 +67,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
-  KurentoToolbox: 8327041ef7c6d7dcbebb49c5a76ee74597728410
+  KurentoToolbox: 107db93af7ce2d6fca2040536bb17194df08d25c
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96

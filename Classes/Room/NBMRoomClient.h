@@ -124,6 +124,8 @@ typedef NS_ENUM(NSInteger, NBMRoomClientConnectionState) {
 
 - (void)joinRoomWithDataChannels:(BOOL)dataChannels;
 
+- (void)joinRoomWithParams:(NSDictionary <NSString *, NSString *>*)params block:(void (^)(NSError *error))block;
+
 /**
  *  Represents a client's request to join a room. If the room does not exists, it is created.
  *  @note No message is sent to client's delegate.

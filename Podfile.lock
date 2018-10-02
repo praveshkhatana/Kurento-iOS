@@ -1,13 +1,14 @@
 PODS:
-  - CocoaLumberjack (2.2.0):
-    - CocoaLumberjack/Default (= 2.2.0)
-    - CocoaLumberjack/Extensions (= 2.2.0)
-  - CocoaLumberjack/Core (2.2.0)
-  - CocoaLumberjack/Default (2.2.0):
+  - CocoaLumberjack (2.4.0):
+    - CocoaLumberjack/Default (= 2.4.0)
+    - CocoaLumberjack/Extensions (= 2.4.0)
+  - CocoaLumberjack/Core (2.4.0)
+  - CocoaLumberjack/Default (2.4.0):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.2.0):
+  - CocoaLumberjack/Extensions (2.4.0):
     - CocoaLumberjack/Default
   - DGActivityIndicatorView (2.1.1)
+  - GoogleWebRTC (1.1.24489)
   - KurentoToolbox (0.6.0):
     - KurentoToolbox/Default (= 0.6.0)
   - KurentoToolbox/Default (0.6.0):
@@ -28,7 +29,7 @@ PODS:
     - KurentoToolbox/Utils
     - KurentoToolbox/WebRTC
   - KurentoToolbox/Utils (0.6.0):
-    - CocoaLumberjack (~> 2.2.0)
+    - CocoaLumberjack (~> 2.4.0)
   - KurentoToolbox/WebRTC (0.6.0):
     - KurentoToolbox/Utils
   - Masonry (0.6.4)
@@ -38,8 +39,9 @@ PODS:
   - SocketRocket (0.5.1)
 
 DEPENDENCIES:
-  - CocoaLumberjack
+  - CocoaLumberjack (= 2.4.0)
   - DGActivityIndicatorView
+  - GoogleWebRTC
   - KurentoToolbox (from `.`)
   - Masonry (~> 0.6.4)
   - MBProgressHUD (~> 0.9.2)
@@ -51,6 +53,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CocoaLumberjack
     - DGActivityIndicatorView
+    - GoogleWebRTC
     - Masonry
     - MBProgressHUD
     - Reachability
@@ -62,15 +65,16 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
-  KurentoToolbox: b90730638a735a4f90bf11da8e4f4fd2ec00928f
+  GoogleWebRTC: 492a912a31aa1f66466c151a1bdcd98211f882df
+  KurentoToolbox: 8327041ef7c6d7dcbebb49c5a76ee74597728410
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SBJson: af3137ccda22be3004487524da0a071c75d4251b
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: 71a60a9d317e880dea1b7d8300010848b8e71acc
+PODFILE CHECKSUM: ac49755be26881a2169a79ad700d21b2ecdf3a68
 
 COCOAPODS: 1.5.3

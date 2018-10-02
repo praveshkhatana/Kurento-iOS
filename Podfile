@@ -1,13 +1,14 @@
 source 'https://github.com/artsy/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 workspace 'Kurento-iOS'
 
 def common_target_pods
-    pod 'CocoaLumberjack', :configurations => ['Debug']
+    pod 'CocoaLumberjack', '2.4.0'
     pod 'SBJson', '~> 4.0.2'
+    pod 'GoogleWebRTC'
 #    pod 'libjingle_peerconnection', '~> 11177.2.0'
     #pod 'nighthawk-webrtc', :podspec => './nighthawk-webrtc-chrome-m45-capture-xcode.podspec'
     pod 'SocketRocket', '~> 0.5.1'

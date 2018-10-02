@@ -79,6 +79,7 @@
 		564D8A0B1D18485500676AAC /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564D8A0A1D18485500676AAC /* WebRTC.framework */; };
 		564D8A141D1942C300676AAC /* libPods-KurentoToolbox-Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 564D8A131D1942C300676AAC /* libPods-KurentoToolbox-Static.a */; };
 		CF748A736A49BD58460593DD /* libPods-KurentoToolbox-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDE223912EC939E9DA6EBE1 /* libPods-KurentoToolbox-Tests.a */; };
+		F6F54A82E32C930A1B122013 /* libPods-KurentoToolbox-Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A44AD8017DB368676764B11 /* libPods-KurentoToolbox-Static.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +189,7 @@
 				4A6E88DF1C105435000A8EE9 /* UIKit.framework in Frameworks */,
 				4A6E88DD1C10542D000A8EE9 /* Foundation.framework in Frameworks */,
 				564D8A141D1942C300676AAC /* libPods-KurentoToolbox-Static.a in Frameworks */,
+				F6F54A82E32C930A1B122013 /* libPods-KurentoToolbox-Static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +466,6 @@
 				4A46BC1E1BE3DF79009E0FBE /* Headers */,
 				4A46BC1F1BE3DF79009E0FBE /* Resources */,
 				4AE438FC1BF49EEE001882E5 /* Appledoc */,
-				00B7B1E4654ECEB222B83919 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -484,7 +485,6 @@
 				4AF48D591BECEFFA004E4AD2 /* Frameworks */,
 				4AF48D5A1BECEFFA004E4AD2 /* Resources */,
 				FA93102E05645A386114EAA3 /* [CP] Embed Pods Frameworks */,
-				ADD11EE09D6B269C6D8D3071 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -551,21 +551,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00B7B1E4654ECEB222B83919 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KurentoToolbox-Static/Pods-KurentoToolbox-Static-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4AE438FC1BF49EEE001882E5 /* Appledoc */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,34 +565,22 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ ${CONFIGURATION} == \"Release\" ]; then\nAPPLEDOC_PATH=`which appledoc`\nif [ $APPLEDOC_PATH ]; then\n$APPLEDOC_PATH \\\n--project-name ${PRODUCT_NAME} \\\n--project-company \"Nubomedia TI\" \\\n--company-id \"it.nubomedia\" \\\n--output \"docs/\" \\\n--no-create-docset \\\n--logformat xcode \\\n--docset-platform-family iphoneos \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--explicit-crossref \\\n--exit-threshold 2 \\\n--ignore \"*.m\" \\\n--ignore \"Internals\" \\\n--ignore \"Utils\" \\\n\"${PROJECT_DIR}/Classes\"\nfi;\nfi";
 		};
-		ADD11EE09D6B269C6D8D3071 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KurentoToolbox-Tests/Pods-KurentoToolbox-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D51A72AC073F02FF081D9157 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KurentoToolbox-Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7127162DBD1234157B2592C /* [CP] Check Pods Manifest.lock */ = {
@@ -616,13 +589,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KurentoToolbox-Static-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA93102E05645A386114EAA3 /* [CP] Embed Pods Frameworks */ = {
@@ -631,9 +607,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KurentoToolbox-Tests/Pods-KurentoToolbox-Tests-frameworks.sh",
+				"${PODS_ROOT}/../WebRTC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
